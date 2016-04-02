@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChuckCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,47 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aqo-9n-Jna">
+                                <rect key="frame" x="0.0" y="20" width="600" height="526"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9E-gC-NaA">
+                                <rect key="frame" x="0.0" y="554" width="600" height="46"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9X-Vk-2TU">
+                                        <rect key="frame" x="504" y="8" width="88" height="30"/>
+                                        <state key="normal" title="Select Photo"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIc-eE-4Se">
+                                        <rect key="frame" x="262" y="8" width="77" height="30"/>
+                                        <state key="normal" title="Take Photo"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Y9X-Vk-2TU" firstAttribute="centerY" secondItem="g9E-gC-NaA" secondAttribute="centerY" id="2n6-g2-ksV"/>
+                                    <constraint firstAttribute="height" secondItem="LIc-eE-4Se" secondAttribute="height" constant="16" id="CPi-Kn-ZlS"/>
+                                    <constraint firstItem="Y9X-Vk-2TU" firstAttribute="trailing" secondItem="g9E-gC-NaA" secondAttribute="trailing" constant="-8" id="REp-rR-XWd"/>
+                                    <constraint firstItem="LIc-eE-4Se" firstAttribute="centerX" secondItem="g9E-gC-NaA" secondAttribute="centerX" id="jV0-WW-7Xv"/>
+                                    <constraint firstItem="LIc-eE-4Se" firstAttribute="centerY" secondItem="g9E-gC-NaA" secondAttribute="centerY" id="nF5-Bn-LTh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Aqo-9n-Jna" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Ffv-eb-BqK"/>
+                            <constraint firstItem="Aqo-9n-Jna" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KrP-Ow-l2K"/>
+                            <constraint firstItem="g9E-gC-NaA" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="SOx-Ua-3nk"/>
+                            <constraint firstItem="g9E-gC-NaA" firstAttribute="top" secondItem="Aqo-9n-Jna" secondAttribute="bottom" constant="8" symbolic="YES" id="a7m-i4-DAJ"/>
+                            <constraint firstItem="Aqo-9n-Jna" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="k9y-t6-w62"/>
+                            <constraint firstItem="g9E-gC-NaA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nOx-b3-oMi"/>
+                            <constraint firstItem="g9E-gC-NaA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="roO-60-Sez"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="575" y="550"/>
         </scene>
     </scenes>
 </document>
