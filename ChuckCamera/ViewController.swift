@@ -8,6 +8,11 @@
 
 import UIKit
 
+let kCameraTransformX = 1
+let kCameraTransformY = 2//1.24299
+let kScreenWidth = 320
+let kScreenHeight = 480
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
     UINavigationControllerDelegate {
 
@@ -30,7 +35,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
 
     func imagePickerController(picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         self.imageView.image = chosenImage
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -42,8 +47,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func takePhoto(sender: UIButton) {
         let picker = UIImagePickerController()
         picker.delegate = self
-        picker.allowsEditing = true
+        picker.allowsEditing = false
         picker.sourceType = .Camera
+
+        //picker.showsCameraControls = false
+        let overlay = OverlayView(frame: CGRectMake(0, 0, CGFloat(kScreenWidth), CGFloat(kScreenHeight)))
+        picker.cameraOverlayView = overlay
+
+        picker.cameraViewTransform = CGAffineTransformScale(picker.cameraViewTransform,
+                                                            CGFloat(kCameraTransformX),
+                                                            CGFloat(kCameraTransformY))
 
         self.presentViewController(picker, animated: true, completion: nil)
     }

@@ -12,6 +12,8 @@
 		F60EB0181CB05F4E00E9168A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60EB0161CB05F4E00E9168A /* Main.storyboard */; };
 		F60EB01A1CB05F4E00E9168A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60EB0191CB05F4E00E9168A /* Assets.xcassets */; };
 		F60EB01D1CB05F4E00E9168A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60EB01B1CB05F4E00E9168A /* LaunchScreen.storyboard */; };
+		F6D5B1C81CB1CE09008CEEF4 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D5B1C71CB1CE09008CEEF4 /* OverlayView.swift */; };
+		F6D5B1CA1CB1CFEB008CEEF4 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D5B1C91CB1CFEB008CEEF4 /* ScanButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		F60EB0191CB05F4E00E9168A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F60EB01C1CB05F4E00E9168A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60EB01E1CB05F4E00E9168A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6D5B1C71CB1CE09008CEEF4 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		F6D5B1C91CB1CFEB008CEEF4 /* ScanButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				F60EB0191CB05F4E00E9168A /* Assets.xcassets */,
 				F60EB01B1CB05F4E00E9168A /* LaunchScreen.storyboard */,
 				F60EB01E1CB05F4E00E9168A /* Info.plist */,
+				F6D5B1C71CB1CE09008CEEF4 /* OverlayView.swift */,
+				F6D5B1C91CB1CFEB008CEEF4 /* ScanButton.swift */,
 			);
 			path = ChuckCamera;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D5B1CA1CB1CFEB008CEEF4 /* ScanButton.swift in Sources */,
+				F6D5B1C81CB1CE09008CEEF4 /* OverlayView.swift in Sources */,
 				F60EB0151CB05F4E00E9168A /* ViewController.swift in Sources */,
 				F60EB0131CB05F4E00E9168A /* AppDelegate.swift in Sources */,
 			);
