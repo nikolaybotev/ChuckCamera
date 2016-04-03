@@ -289,6 +289,7 @@
 				F60EB0231CB05F4E00E9168A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
