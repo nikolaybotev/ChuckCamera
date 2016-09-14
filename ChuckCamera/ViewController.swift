@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if (!UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+        if (!UIImagePickerController.isSourceTypeAvailable(.camera)) {
             let alertView = UIAlertView(
                 title: "Error", message: "No camera", delegate: nil, cancelButtonTitle: "OK")
             alertView.show()
@@ -33,41 +33,40 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         // Dispose of any resources that can be recreated.
     }
 
-    func imagePickerController(picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         self.imageView.image = chosenImage
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
 
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func takePhoto(sender: UIButton) {
+    @IBAction func takePhoto(_ sender: UIButton) {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = false
-        picker.sourceType = .Camera
+        picker.sourceType = .camera
 
         //picker.showsCameraControls = false
-        let overlay = OverlayView(frame: CGRectMake(0, 0, CGFloat(kScreenWidth), CGFloat(kScreenHeight)))
+        let overlay = OverlayView(frame: CGRect(x: 0, y: 0, width: CGFloat(kScreenWidth), height: CGFloat(kScreenHeight)))
         picker.cameraOverlayView = overlay
 
-        picker.cameraViewTransform = CGAffineTransformScale(picker.cameraViewTransform,
-                                                            CGFloat(kCameraTransformX),
-                                                            CGFloat(kCameraTransformY))
+        picker.cameraViewTransform = picker.cameraViewTransform.scaledBy(x: CGFloat(kCameraTransformX),
+                                                            y: CGFloat(kCameraTransformY))
 
-        self.presentViewController(picker, animated: true, completion: nil)
+        self.present(picker, animated: true, completion: nil)
     }
 
-    @IBAction func selectPhoto(sender: UIButton) {
+    @IBAction func selectPhoto(_ sender: UIButton) {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
-        picker.sourceType = .PhotoLibrary
+        picker.sourceType = .photoLibrary
 
-        self.presentViewController(picker, animated: true, completion: nil)
+        self.present(picker, animated: true, completion: nil)
     }
 }
 

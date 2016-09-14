@@ -13,17 +13,17 @@ class OverlayView: UIView {
     required override init(frame: CGRect) {
         super.init(frame: frame)
         // Clear the background of the overlay
-        self.opaque = false
-        self.backgroundColor = UIColor.clearColor()
+        self.isOpaque = false
+        self.backgroundColor = UIColor.clear
 
         // Load the image to show in the overlay
         let overlayGraphic = UIImage(named: "overlaygraphic.png")
         let overlayGraphicView = UIImageView(image: overlayGraphic)
-        overlayGraphicView.frame = CGRectMake(30, 100, 260, 200)
+        overlayGraphicView.frame = CGRect(x: 30, y: 100, width: 260, height: 200)
         self.addSubview(overlayGraphicView)
 
-        let scanButton = ScanButton(frame: CGRectMake(130, 320, 60, 30))
-        scanButton.addTarget(self, action: #selector(self.scanButtonTouchUpInside), forControlEvents: .TouchUpInside)
+        let scanButton = ScanButton(frame: CGRect(x: 130, y: 320, width: 60, height: 30))
+        scanButton.addTarget(self, action: #selector(self.scanButtonTouchUpInside), for: .touchUpInside)
         self.addSubview(scanButton)
     }
     
@@ -32,18 +32,18 @@ class OverlayView: UIView {
     }
 
     func scanButtonTouchUpInside() {
-        let scanningLabel = UILabel(frame: CGRectMake(100, 50, 120, 30))
-        scanningLabel.backgroundColor = UIColor.clearColor()
+        let scanningLabel = UILabel(frame: CGRect(x: 100, y: 50, width: 120, height: 30))
+        scanningLabel.backgroundColor = UIColor.clear
         scanningLabel.font = UIFont(name: "Courier", size: 18.0)
-        scanningLabel.textColor = UIColor.redColor()
+        scanningLabel.textColor = UIColor.red
         scanningLabel.text = "Scanning . . ."
 
         self.addSubview(scanningLabel)
 
-        self.performSelector(#selector(clearLabel), withObject: scanningLabel, afterDelay: 2)
+        self.perform(#selector(clearLabel), with: scanningLabel, afterDelay: 2)
     }
 
-    func clearLabel(label: UILabel) {
+    func clearLabel(_ label: UILabel) {
         label.text = ""
     }
 }
